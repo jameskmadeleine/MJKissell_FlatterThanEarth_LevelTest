@@ -39,15 +39,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Settings _settings;
 
 
-    private bool _isGrounded;
+    
     private float _forwardInput;
     private float _turnInput;
-    private bool _jumpPressed;
+    
 
 
     private void FixedUpdate()
     {
-        this.CheckGrounded();
+       
         this.ProcessMotion();
     }
 
@@ -55,32 +55,17 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         this.UpdateInputState();
-        this.CheckJump();
+        
     }
 
     private void UpdateInputState()
     {
         _forwardInput = Mathf.RoundToInt(Input.GetAxis("Vertical"));
         _turnInput = Mathf.RoundToInt(Input.GetAxis("Horizontal"));
-        _jumpPressed = Input.GetButtonDown("Jump");
+        
     }
 
-    private void CheckGrounded()
-    {
-        _isGrounded = false;
-        float capsuleHeight = Mathf.Max(_references.CapsuleCollider.radius * 2f, _references.CapsuleCollider.height);
-        Vector3 capsuleBottom = transform.TransformPoint(_references.CapsuleCollider.center - Vector3.up * capsuleHeight / 2f);
-        Ray ray = new Ray(capsuleBottom + transform.up * .01f, -transform.up);
-        RaycastHit hit;
-        if (Physics.Raycast(ray, out hit,_settings.GroundCheckerDistance,_settings.GroundLayer))
-        {
-            float normalAngle = Vector3.Angle(hit.normal, transform.up);
-            if (normalAngle < _settings.SlopeLimit)
-            {
-                    _isGrounded = true;
-            }
-        }
-    }
+    
 
     private void RotateTowardsMotion(Vector3 velocity)
     {
@@ -95,13 +80,7 @@ public class PlayerController : MonoBehaviour
         this.RotateTowardsMotion(velocity);
     }
 
-    private void CheckJump()
-    {
-        if (_jumpPressed && _settings.AllowJump && _isGrounded)
-        {
-            _references.RigidBody.AddForce(transform.up * _settings.JumpForce,_settings.JumpForceMode);
-        }
-    }
+  
 
 
     public void OnCheckpointRespawn(Checkpoint checkpoint)
