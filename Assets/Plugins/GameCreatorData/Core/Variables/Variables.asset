@@ -51,6 +51,44 @@ MonoBehaviour:
   references:
   - {fileID: 2694006753004861425}
   - {fileID: -4633119141075933682}
+  - {fileID: 3654078491560456761}
+  - {fileID: 118748282886165298}
+--- !u!114 &118748282886165298
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409a6d6eb973c4d859c03daf1b062467, type: 3}
+  m_Name: hc2zl5pp
+  m_EditorClassIdentifier: 
+  variable:
+    name: PressButton
+    save: 0
+    type: 9
+    tags: 0
+    varStr:
+      value: 
+    varNum:
+      value: 0
+    varBol:
+      value: 0
+    varCol:
+      value: {r: 1, g: 1, b: 1, a: 1}
+    varVc2:
+      value: {x: 0, y: 0}
+    varVc3:
+      value: {x: 0, y: 0, z: 0}
+    varTxt:
+      value: {fileID: 0}
+    varSpr:
+      value: {fileID: 0}
+    varObj:
+      value: {fileID: 0}
+  isExpanded: 1
 --- !u!114 &2694006753004861425
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -65,6 +103,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variable:
     name: isCarrying
+    save: 0
+    type: 3
+    tags: 0
+    varStr:
+      value: 
+    varNum:
+      value: 0
+    varBol:
+      value: 0
+    varCol:
+      value: {r: 1, g: 1, b: 1, a: 1}
+    varVc2:
+      value: {x: 0, y: 0}
+    varVc3:
+      value: {x: 0, y: 0, z: 0}
+    varTxt:
+      value: {fileID: 0}
+    varSpr:
+      value: {fileID: 0}
+    varObj:
+      value: {fileID: 0}
+  isExpanded: 1
+--- !u!114 &3654078491560456761
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409a6d6eb973c4d859c03daf1b062467, type: 3}
+  m_Name: e9ovfoax
+  m_EditorClassIdentifier: 
+  variable:
+    name: isPressed
     save: 0
     type: 3
     tags: 0
