@@ -45,11 +45,7 @@ public class PlayerController : MonoBehaviour
     
 
 
-    private void FixedUpdate()
-    {
-       
-        this.ProcessMotion();
-    }
+   
 
 
     private void Update()
@@ -65,24 +61,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    
-
-    private void RotateTowardsMotion(Vector3 velocity)
-    {
-        velocity.y = 0;
-        transform.rotation =  Quaternion.LookRotation(velocity, transform.up);
-    }
-    private void ProcessMotion()
-    {
-        Vector3 velocity =  (Vector3.forward * Mathf.Clamp(_forwardInput, -1f, 1f) + Vector3.right * Mathf.Clamp(_turnInput, -1f, 1f)) *  _settings.MoveSpeed * Time.fixedDeltaTime;
-        Vector3 targetPosition = transform.position + velocity;
-        _references.RigidBody.MovePosition(targetPosition);
-        this.RotateTowardsMotion(velocity);
-    }
-
   
-
-
     public void OnCheckpointRespawn(Checkpoint checkpoint)
     {
         this.transform.position = checkpoint.RespawnPostitionTransform.position;
